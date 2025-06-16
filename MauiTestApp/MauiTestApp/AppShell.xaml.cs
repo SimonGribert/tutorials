@@ -1,4 +1,5 @@
-﻿using Microsoft.Maui.Controls;
+﻿using MauiTestApp.Views;
+using Microsoft.Maui.Controls;
 
 namespace MauiTestApp;
 
@@ -8,6 +9,8 @@ public partial class AppShell
     {
         InitializeComponent();
 
-        Routing.RegisterRoute(nameof(Views.NotePage), typeof(Views.NotePage));
+        Routing.RegisterRoute(nameof(NotePage), typeof(NotePage));
+        Routing.RegisterRoute(nameof(MainView), typeof(MainView));
+        Routing.RegisterRoute(nameof(ClaimsView), typeof(ClaimsView));
     }
 }
