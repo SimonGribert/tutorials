@@ -1,7 +1,4 @@
-﻿using Microsoft.Maui;
-using Microsoft.Maui.Controls;
-
-namespace MauiTestApp;
+﻿namespace MauiTestApp;
 
 public partial class App
 {
