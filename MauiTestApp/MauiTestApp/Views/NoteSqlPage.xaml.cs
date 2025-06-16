@@ -1,8 +1,8 @@
 namespace MauiTestApp.Views;
 
-public partial class NotePage
+public partial class NoteSqlPage
 {
-    public NotePage()
+    public NoteSqlPage()
     {
         InitializeComponent();
     }

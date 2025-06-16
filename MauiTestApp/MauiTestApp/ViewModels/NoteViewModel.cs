@@ -1,11 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.ComponentModel;
 using MauiTestApp.Models;
-using Microsoft.Maui.Controls;
 
 namespace MauiTestApp.ViewModels;
 

@@ -63,6 +63,7 @@
         <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
         <PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)"/>
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="9.0.0"/>
+        <PackageReference Include="sqlite-net-pcl" Version="1.9.172" />
     </ItemGroup>
 
     <ItemGroup>
@@ -73,6 +74,12 @@
         <SubType>Designer</SubType>
       </MauiXaml>
       <MauiXaml Remove="obj\**" />
+      <MauiXaml Update="Views\NoteSqlPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
+      <MauiXaml Update="Views\AllNoteSqlsPage.xaml">
+        <SubType>Designer</SubType>
+      </MauiXaml>
     </ItemGroup>
 
     <ItemGroup>
@@ -85,6 +92,14 @@
         <SubType>Code</SubType>
       </Compile>
       <Compile Remove="obj\**" />
+      <Compile Update="Views\NoteSqlPage.xaml.cs">
+        <DependentUpon>NoteSqlPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\AllNoteSqlsPage.xaml.cs">
+        <DependentUpon>AllNoteSqlsPage.xaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
     </ItemGroup>
 
     <ItemGroup>

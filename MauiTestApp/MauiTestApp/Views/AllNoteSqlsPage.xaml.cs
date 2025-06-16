@@ -1,12 +1,11 @@
 namespace MauiTestApp.Views;
 
-public partial class AllNotesPage
+public partial class AllNoteSqlsPage
 {
-    public AllNotesPage()
+    public AllNoteSqlsPage()
     {
         InitializeComponent();
     }
-    
     private void ContentPage_NavigatedTo(object sender, NavigatedToEventArgs e)
     {
         NotesCollection.SelectedItem = null;

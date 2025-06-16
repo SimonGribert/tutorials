@@ -1,9 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Microsoft.Maui.Storage;
-
 namespace MauiTestApp.Models;
 
 internal class Note
