@@ -18,7 +18,9 @@ internal class NoteSqlsViewModel : IQueryAttributable
         NewCommand = new AsyncRelayCommand(NewNoteAsync);
         SelectNoteCommand = new AsyncRelayCommand<NoteSqlViewModel>(SelectNoteAsync);
 
-        ReloadAsync().RunSynchronously();
+        var load = new AsyncRelayCommand(ReloadAsync);
+
+        load.Execute(this);
     }
 
     private async Task ReloadAsync()
