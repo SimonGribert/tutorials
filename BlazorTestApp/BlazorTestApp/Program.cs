@@ -1,5 +1,7 @@
 using BlazorTestApp.Components;
+using BlazorTestApp.Components.Hubs;
 using BlazorTestApp.Data;
+using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,7 +15,16 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents();
+    .AddInteractiveServerComponents()
+    ;
+
+builder.Services.AddSignalR();
+
+builder.Services.AddResponseCompression(opts =>
+{
+    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        [ "application/octet-stream" ]);
+});
 
 var app = builder.Build();
 
@@ -34,9 +45,9 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
 app.UseAntiforgery();
+app.UseResponseCompression();
+app.MapHub<ChatHub>("/chathub");
 
 app.MapStaticAssets();
 app.MapRazorComponents<App>()
