@@ -61,5 +61,5 @@ jobs:
         with:
           app-name: 'sg-blazortestapp'
           slot-name: 'Production'
-          package: ./myapp
+          package: ${{env.DOTNET_ROOT}}/myapp
           
